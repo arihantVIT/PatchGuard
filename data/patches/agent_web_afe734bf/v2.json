@@ -1,0 +1,8 @@
+{
+    "patch_id": "agent_web_afe734bf",
+    "version_id": "v2",
+    "files": {
+        "text_utils.py": "import re\n\n\ndef normalize_spaces(text):\n    '''Collapse repeated whitespace and trim the ends.'''\n    return \" \".join(text.split())\n\n\ndef slugify(text):\n    '''Lowercase text, replace runs of non-alphanumeric characters with a single hyphen, and trim hyphens from both ends.'''\n    text = text.lower()\n    text = re.sub(r'[^a-z0-9]+', '-', text)\n    return text.strip('-')",
+        "test_behavior.py": "import pytest\n\nimport text_utils\n\n\ndef test_normalize_spaces_collapses_multiple_internal_spaces():\n    assert text_utils.normalize_spaces(\"one   two    three\") == \"one two three\"\n\n\ndef test_normalize_spaces_trims_leading_and_trailing_spaces():\n    assert text_utils.normalize_spaces(\"  leading and trailing  \") == \"leading and trailing\"\n\n\ndef test_normalize_spaces_collapses_mixed_whitespace():\n    assert text_utils.normalize_spaces(\"a\\t\\tb\\nc\\r\\nd\") == \"a b c d\"\n\n\ndef test_normalize_spaces_empty_string_returns_empty():\n    assert text_utils.normalize_spaces(\"\") == \"\"\n\n\ndef test_normalize_spaces_whitespace_only_returns_empty():\n    assert text_utils.normalize_spaces(\"   \\t\\n  \") == \"\"\n\n\ndef test_normalize_spaces_single_word_unchanged():\n    assert text_utils.normalize_spaces(\"single\") == \"single\"\n\n\ndef test_normalize_spaces_already_normalized_unchanged():\n    assert text_utils.normalize_spaces(\"already normal\") == \"already normal\"\n\n\ndef test_normalize_spaces_none_raises_attribute_error():\n    with pytest.raises(AttributeError):\n        text_utils.normalize_spaces(None)"
+    }
+}

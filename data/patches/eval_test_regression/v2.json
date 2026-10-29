@@ -1,0 +1,7 @@
+{
+    "patch_id": "eval_test_regression",
+    "version_id": "v2",
+    "files": {
+        "calculator.py": "def calculate_total(price, discount):\n    if discount < 0:\n        raise ValueError(\"Discount cannot be negative\")\n    if discount > price:\n        raise ValueError(\"Discount cannot exceed price\")\n    # Agent accidentally added discount instead of subtracting\n    return price + discount\n\n\ndef format_total(total):\n    return f\"Total: {total}\"\n"
+    }
+}

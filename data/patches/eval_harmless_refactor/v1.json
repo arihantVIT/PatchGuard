@@ -1,0 +1,7 @@
+{
+    "patch_id": "eval_harmless_refactor",
+    "version_id": "v1",
+    "files": {
+        "calculator.py": "def calculate_total(price, discount):\n    if discount < 0:\n        raise ValueError(\"Discount cannot be negative\")\n    if discount > price:\n        raise ValueError(\"Discount cannot exceed price\")\n    return price - discount\n\n\ndef format_total(total):\n    return f\"Total: {total}\"\n"
+    }
+}

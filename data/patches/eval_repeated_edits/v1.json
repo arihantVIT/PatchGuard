@@ -1,0 +1,7 @@
+{
+    "patch_id": "eval_repeated_edits",
+    "version_id": "v1",
+    "files": {
+        "calculator.py": "def calculate_total(price, discount):\n    return price - discount\n\ndef format_total(total):\n    return f'Total: {total}'\n"
+    }
+}

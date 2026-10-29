@@ -1,0 +1,7 @@
+{
+    "patch_id": "eval_repeated_edits",
+    "version_id": "v4",
+    "files": {
+        "calculator.py": "def calculate_total(price, discount):\n    if discount < 0:\n        raise ValueError('Discount cannot be negative')\n    if discount > price:\n        raise ValueError('Discount cannot exceed price')\n    # Tweak: ensure float precision\n    return float(price - discount)\n\ndef format_total(total):\n    return f'Total: {total}'\n"
+    }
+}

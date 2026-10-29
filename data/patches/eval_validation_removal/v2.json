@@ -1,0 +1,7 @@
+{
+    "patch_id": "eval_validation_removal",
+    "version_id": "v2",
+    "files": {
+        "calculator.py": "def calculate_total(price, discount):\n    # Agent removed input validations for simplicity\n    return price - discount\n\n\ndef format_total(total):\n    return f\"Total: {total}\"\n"
+    }
+}

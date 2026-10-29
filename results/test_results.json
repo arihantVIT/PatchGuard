@@ -1,0 +1,62 @@
+{
+    "division_by_zero": {
+        "description": "Handle division by zero safely",
+        "original": {
+            "example": "division_by_zero",
+            "version": "original",
+            "passed": false,
+            "exit_code": 1,
+            "stdout": ".F                                                                       [100%]\n=================================== FAILURES ===================================\n____________________________ test_division_by_zero _____________________________\ntest_behavior.py:12: in test_division_by_zero\n    divide(10, 0)\nimplementation.py:3: in divide\n    return a / b\n           ^^^^^\nE   ZeroDivisionError: division by zero\n=========================== short test summary info ============================\nFAILED test_behavior.py::test_division_by_zero - ZeroDivisionError: division ...\n1 failed, 1 passed in 0.01s\n",
+            "stderr": ""
+        },
+        "candidate": {
+            "example": "division_by_zero",
+            "version": "candidate",
+            "passed": true,
+            "exit_code": 0,
+            "stdout": "..                                                                       [100%]\n2 passed in 0.00s\n",
+            "stderr": ""
+        },
+        "candidate_accepted": true
+    },
+    "incorrect_discount": {
+        "description": "Calculate percentage discounts correctly",
+        "original": {
+            "example": "incorrect_discount",
+            "version": "original",
+            "passed": false,
+            "exit_code": 1,
+            "stdout": "F                                                                        [100%]\n=================================== FAILURES ===================================\n________________________________ test_discount _________________________________\ntest_behavior.py:7: in test_discount\n    assert apply_discount(200, 10) == 180\nE   assert 190 == 180\nE    +  where 190 = apply_discount(200, 10)\n=========================== short test summary info ============================\nFAILED test_behavior.py::test_discount - assert 190 == 180\n1 failed in 0.01s\n",
+            "stderr": ""
+        },
+        "candidate": {
+            "example": "incorrect_discount",
+            "version": "candidate",
+            "passed": true,
+            "exit_code": 0,
+            "stdout": ".                                                                        [100%]\n1 passed in 0.00s\n",
+            "stderr": ""
+        },
+        "candidate_accepted": true
+    },
+    "total_regression": {
+        "description": "Detect a regression in total calculation",
+        "original": {
+            "example": "total_regression",
+            "version": "original",
+            "passed": true,
+            "exit_code": 0,
+            "stdout": ".                                                                        [100%]\n1 passed in 0.00s\n",
+            "stderr": ""
+        },
+        "candidate": {
+            "example": "total_regression",
+            "version": "candidate",
+            "passed": false,
+            "exit_code": 1,
+            "stdout": "F                                                                        [100%]\n=================================== FAILURES ===================================\n_____________________________ test_calculate_total _____________________________\ntest_behavior.py:6: in test_calculate_total\n    assert calculate_total(100, 3) == 300\nE   assert 103 == 300\nE    +  where 103 = calculate_total(100, 3)\n=========================== short test summary info ============================\nFAILED test_behavior.py::test_calculate_total - assert 103 == 300\n1 failed in 0.01s\n",
+            "stderr": ""
+        },
+        "candidate_accepted": false
+    }
+}
